@@ -1,4 +1,8 @@
-import Link from "next/link";
+"use client";
+
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+};
 
 export default function Footer() {
   return (
@@ -7,14 +11,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="mb-4">
+            <button onClick={() => scrollTo("hero")} className="mb-4 text-left">
               <span className="font-display text-2xl font-bold text-[#F0EBE0] tracking-wide block">
                 AYDINĞÜLER
               </span>
               <span className="text-[0.6rem] tracking-[0.3em] text-[#C9A84C] uppercase font-medium">
                 Yapı & İnşaat
               </span>
-            </div>
+            </button>
             <p className="text-[#8B877E] text-sm leading-relaxed max-w-xs">
               Gaziantep'te 20 yılı aşkın deneyimimizle konut ve ticari yapı inşaatı, mimari tasarım ve gayrimenkul danışmanlığı hizmetleri sunuyoruz.
             </p>
@@ -25,15 +29,18 @@ export default function Footer() {
             <p className="section-label mb-5">Hizmetler</p>
             <ul className="space-y-2.5">
               {[
-                { href: "/insaat", label: "İnşaat" },
-                { href: "/mimari", label: "Mimari Tasarım" },
-                { href: "/danismanlik", label: "Danışmanlık" },
-                { href: "/alim-satim", label: "Alım & Satım" },
+                { id: "hizmetler", label: "İnşaat" },
+                { id: "hizmetler", label: "Mimari Tasarım" },
+                { id: "hizmetler", label: "Danışmanlık" },
+                { id: "hizmetler", label: "Alım & Satım" },
               ].map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-[#8B877E] text-sm hover:text-[#C9A84C] transition-colors">
+                <li key={l.label}>
+                  <button
+                    onClick={() => scrollTo(l.id)}
+                    className="text-[#8B877E] text-sm hover:text-[#C9A84C] transition-colors"
+                  >
                     {l.label}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -70,9 +77,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Aydıngüler Yapı ve İnşaat. Tüm hakları saklıdır.
           </p>
           <div className="flex gap-5 text-xs text-[#8B877E]">
-            <Link href="/hakkimizda" className="hover:text-[#C9A84C] transition-colors">Hakkımızda</Link>
-            <Link href="/projeler" className="hover:text-[#C9A84C] transition-colors">Projeler</Link>
-            <Link href="/iletisim" className="hover:text-[#C9A84C] transition-colors">İletişim</Link>
+            <button onClick={() => scrollTo("hakkimizda")} className="hover:text-[#C9A84C] transition-colors">Hakkımızda</button>
+            <button onClick={() => scrollTo("projeler")} className="hover:text-[#C9A84C] transition-colors">Projeler</button>
+            <button onClick={() => scrollTo("iletisim")} className="hover:text-[#C9A84C] transition-colors">İletişim</button>
           </div>
         </div>
       </div>
