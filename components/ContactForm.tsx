@@ -16,50 +16,53 @@ export default function ContactForm() {
 
   if (sent) {
     return (
-      <div className="h-full flex flex-col items-center justify-center text-center p-12 border border-[rgba(201,168,76,0.2)] bg-[#131C26]">
-        <div className="w-12 h-12 border border-[#C9A84C] flex items-center justify-center text-[#C9A84C] text-2xl mb-6">✓</div>
-        <h3 className="font-display text-2xl font-bold text-[#F0EBE0] mb-3">Mesajınız İletildi</h3>
-        <p className="text-[#8B877E] text-sm leading-relaxed mb-6">
+      <div className="h-full flex flex-col items-center justify-center text-center p-12 border border-[rgba(155,111,26,0.25)] bg-[#FAF6EE]">
+        <div className="w-12 h-12 border border-[#9B6F1A] flex items-center justify-center text-[#9B6F1A] text-2xl mb-6">✓</div>
+        <h3 className="font-display text-2xl font-bold text-[#1C0F00] mb-3">Mesajınız İletildi</h3>
+        <p className="text-[#6B4C30] text-sm leading-relaxed mb-6">
           Ekibimiz en kısa sürede sizinle iletişime geçecektir.
         </p>
-        <button onClick={() => setSent(false)} className="text-[#C9A84C] text-xs tracking-widest uppercase hover:text-[#E5C870] transition-colors">
+        <button onClick={() => setSent(false)} className="text-[#9B6F1A] text-xs tracking-widest uppercase hover:text-[#7A520F] transition-colors font-semibold">
           Yeni Mesaj Gönder
         </button>
       </div>
     );
   }
 
+  const inputClass =
+    "w-full bg-[#FAF6EE] border border-[rgba(107,76,48,0.2)] text-[#1C0F00] text-sm px-4 py-3 focus:outline-none focus:border-[rgba(155,111,26,0.6)] placeholder:text-[#C4AF9A] transition-colors";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label className="block text-[0.65rem] tracking-widest uppercase text-[#8B877E] mb-2">Ad Soyad *</label>
+          <label className="block text-[0.65rem] tracking-widest uppercase text-[#9E7D60] mb-2 font-semibold">Ad Soyad *</label>
           <input
             required
             value={form.name}
             onChange={(e) => set("name", e.target.value)}
             placeholder="Adınız Soyadınız"
-            className="w-full bg-[#131C26] border border-[rgba(201,168,76,0.15)] text-[#F0EBE0] text-sm px-4 py-3 focus:outline-none focus:border-[rgba(201,168,76,0.5)] placeholder:text-[#4A4740] transition-colors"
+            className={inputClass}
           />
         </div>
         <div>
-          <label className="block text-[0.65rem] tracking-widest uppercase text-[#8B877E] mb-2">Telefon</label>
+          <label className="block text-[0.65rem] tracking-widest uppercase text-[#9E7D60] mb-2 font-semibold">Telefon</label>
           <input
             type="tel"
             value={form.phone}
             onChange={(e) => set("phone", e.target.value)}
             placeholder="05xx xxx xx xx"
-            className="w-full bg-[#131C26] border border-[rgba(201,168,76,0.15)] text-[#F0EBE0] text-sm px-4 py-3 focus:outline-none focus:border-[rgba(201,168,76,0.5)] placeholder:text-[#4A4740] transition-colors"
+            className={inputClass}
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-[0.65rem] tracking-widest uppercase text-[#8B877E] mb-2">Konu</label>
+        <label className="block text-[0.65rem] tracking-widest uppercase text-[#9E7D60] mb-2 font-semibold">Konu</label>
         <select
           value={form.subject}
           onChange={(e) => set("subject", e.target.value)}
-          className="w-full bg-[#131C26] border border-[rgba(201,168,76,0.15)] text-[#F0EBE0] text-sm px-4 py-3 focus:outline-none focus:border-[rgba(201,168,76,0.5)] transition-colors"
+          className={inputClass}
         >
           <option value="">Konu Seçin</option>
           <option value="İnşaat">İnşaat</option>
@@ -71,14 +74,14 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-[0.65rem] tracking-widest uppercase text-[#8B877E] mb-2">Mesajınız *</label>
+        <label className="block text-[0.65rem] tracking-widest uppercase text-[#9E7D60] mb-2 font-semibold">Mesajınız *</label>
         <textarea
           required
           rows={5}
           value={form.message}
           onChange={(e) => set("message", e.target.value)}
           placeholder="Projeniz veya sorunuz hakkında bilgi verin..."
-          className="w-full bg-[#131C26] border border-[rgba(201,168,76,0.15)] text-[#F0EBE0] text-sm px-4 py-3 focus:outline-none focus:border-[rgba(201,168,76,0.5)] placeholder:text-[#4A4740] transition-colors resize-none"
+          className={`${inputClass} resize-none`}
         />
       </div>
 
@@ -89,8 +92,9 @@ export default function ContactForm() {
         </svg>
       </button>
 
-      <p className="text-[#4A4740] text-[0.65rem] text-center">
-        Formu göndermek e-posta uygulamanızı açar. Doğrudan aramak için: <a href="tel:+903423601525" className="text-[#C9A84C] hover:underline">0342 360 15 25</a>
+      <p className="text-[#9E7D60] text-[0.65rem] text-center">
+        Formu göndermek e-posta uygulamanızı açar. Doğrudan aramak için:{" "}
+        <a href="tel:+903423601525" className="text-[#9B6F1A] hover:underline font-semibold">0342 360 15 25</a>
       </p>
     </form>
   );

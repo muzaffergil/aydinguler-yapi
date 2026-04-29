@@ -6,20 +6,20 @@ const scrollTo = (id: string) => {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#080D13] border-t border-[rgba(201,168,76,0.12)] pt-16 pb-8">
+    <footer className="bg-[#E2D6BA] border-t border-[rgba(107,76,48,0.16)] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <button onClick={() => scrollTo("hero")} className="mb-4 text-left">
-              <span className="font-display text-2xl font-bold text-[#F0EBE0] tracking-wide block">
-                AYDINĞÜLER
+              <span className="font-display text-2xl font-bold text-[#1C0F00] tracking-wide block">
+                AYDINGÜLER
               </span>
-              <span className="text-[0.6rem] tracking-[0.3em] text-[#C9A84C] uppercase font-medium">
+              <span className="text-[0.6rem] tracking-[0.3em] text-[#9B6F1A] uppercase font-semibold">
                 Yapı & İnşaat
               </span>
             </button>
-            <p className="text-[#8B877E] text-sm leading-relaxed max-w-xs">
+            <p className="text-[#6B4C30] text-sm leading-relaxed max-w-xs">
               Gaziantep'te 20 yılı aşkın deneyimimizle konut ve ticari yapı inşaatı, mimari tasarım ve gayrimenkul danışmanlığı hizmetleri sunuyoruz.
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function Footer() {
                 <li key={l.label}>
                   <button
                     onClick={() => scrollTo(l.id)}
-                    className="text-[#8B877E] text-sm hover:text-[#C9A84C] transition-colors"
+                    className="text-[#6B4C30] text-sm hover:text-[#9B6F1A] transition-colors"
                   >
                     {l.label}
                   </button>
@@ -49,21 +49,21 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <p className="section-label mb-5">İletişim</p>
-            <ul className="space-y-3 text-sm text-[#8B877E]">
+            <ul className="space-y-3 text-sm text-[#6B4C30]">
               <li className="flex items-start gap-2">
-                <svg className="mt-0.5 shrink-0 text-[#C9A84C]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="mt-0.5 shrink-0 text-[#9B6F1A]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.02 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16z"/>
                 </svg>
-                <a href="tel:+903423601525" className="hover:text-[#C9A84C] transition-colors">0342 360 15 25</a>
+                <a href="tel:+903423601525" className="hover:text-[#9B6F1A] transition-colors">0342 360 15 25</a>
               </li>
               <li className="flex items-start gap-2">
-                <svg className="mt-0.5 shrink-0 text-[#C9A84C]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="mt-0.5 shrink-0 text-[#9B6F1A]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 6 10-6"/>
                 </svg>
-                <a href="mailto:info@aydinguleryapi.com" className="hover:text-[#C9A84C] transition-colors">info@aydinguleryapi.com</a>
+                <a href="mailto:info@aydinguleryapi.com" className="hover:text-[#9B6F1A] transition-colors">info@aydinguleryapi.com</a>
               </li>
               <li className="flex items-start gap-2">
-                <svg className="mt-0.5 shrink-0 text-[#C9A84C]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg className="mt-0.5 shrink-0 text-[#9B6F1A]" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
                 </svg>
                 <span>Gaziantep, Türkiye</span>
@@ -72,14 +72,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[rgba(201,168,76,0.08)] pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[#8B877E] text-xs">
+        <div className="border-t border-[rgba(107,76,48,0.12)] pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-[#9E7D60] text-xs">
             © {new Date().getFullYear()} Aydıngüler Yapı ve İnşaat. Tüm hakları saklıdır.
           </p>
-          <div className="flex gap-5 text-xs text-[#8B877E]">
-            <button onClick={() => scrollTo("hakkimizda")} className="hover:text-[#C9A84C] transition-colors">Hakkımızda</button>
-            <button onClick={() => scrollTo("projeler")} className="hover:text-[#C9A84C] transition-colors">Projeler</button>
-            <button onClick={() => scrollTo("iletisim")} className="hover:text-[#C9A84C] transition-colors">İletişim</button>
+          <div className="flex gap-5 text-xs text-[#6B4C30]">
+            <button onClick={() => scrollTo("hakkimizda")} className="hover:text-[#9B6F1A] transition-colors">Hakkımızda</button>
+            <button onClick={() => scrollTo("projeler")} className="hover:text-[#9B6F1A] transition-colors">Projeler</button>
+            <button onClick={() => scrollTo("iletisim")} className="hover:text-[#9B6F1A] transition-colors">İletişim</button>
           </div>
         </div>
       </div>
