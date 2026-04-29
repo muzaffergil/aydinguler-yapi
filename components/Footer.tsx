@@ -17,7 +17,7 @@ export default function Footer() {
               <img
                 src={`${BASE}/logo.png`}
                 alt="Aydıngüler Yapı İnşaat"
-                className="h-[320px] w-auto"
+                className="h-[160px] w-auto"
                 style={{ mixBlendMode: "multiply" }}
               />
             </button>
