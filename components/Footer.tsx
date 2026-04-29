@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 };
@@ -13,11 +13,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <button onClick={() => scrollTo("hero")} className="mb-4 text-left">
-              <Image
-                src="/logo.png"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${BASE}/logo.png`}
                 alt="Aydıngüler Yapı İnşaat"
-                width={180}
-                height={58}
+                className="h-14 w-auto"
                 style={{ mixBlendMode: "multiply" }}
               />
             </button>

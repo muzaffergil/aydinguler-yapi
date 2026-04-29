@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const LINKS = [
   { href: "#hero", label: "Ana Sayfa" },
@@ -65,13 +66,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-18 py-4">
         {/* Logo */}
         <button onClick={() => scrollTo("#hero")} className="flex items-center">
-          <Image
-            src="/logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${BASE}/logo.png`}
             alt="Aydıngüler Yapı İnşaat"
-            width={160}
-            height={52}
+            className="h-11 w-auto"
             style={{ mixBlendMode: "multiply" }}
-            priority
           />
         </button>
 
