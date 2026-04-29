@@ -420,8 +420,8 @@ export default function HomePage() {
                         </svg>
                       ),
                       label: "Adres",
-                      value: "Gaziantep, Türkiye",
-                      href: undefined,
+                      value: "Haritada Görüntüle →",
+                      href: "https://maps.app.goo.gl/aYr9AXGQExVosRs3A",
                     },
                   ].map((item) => (
                     <div key={item.label} className="flex items-start gap-4">
@@ -431,7 +431,7 @@ export default function HomePage() {
                       <div>
                         <p className="text-[0.65rem] tracking-widest uppercase text-[#9E7D60] mb-0.5">{item.label}</p>
                         {item.href ? (
-                          <a href={item.href} className="text-[#1C0F00] text-sm hover:text-[#9B6F1A] transition-colors font-medium">
+                          <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-[#1C0F00] text-sm hover:text-[#9B6F1A] transition-colors font-medium">
                             {item.value}
                           </a>
                         ) : (
@@ -455,6 +455,38 @@ export default function HomePage() {
               <ContactForm />
             </RevealSection>
           </div>
+
+          {/* Map */}
+          <RevealSection direction="up" delay={100} className="mt-14">
+            <div className="border border-[rgba(107,76,48,0.16)] overflow-hidden shadow-sm">
+              <div className="bg-[#FAF6EE] border-b border-[rgba(107,76,48,0.12)] px-5 py-3 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9B6F1A" strokeWidth="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span className="text-[0.7rem] tracking-widest uppercase text-[#9B6F1A] font-semibold">Konumumuz</span>
+                </div>
+                <a
+                  href="https://maps.app.goo.gl/aYr9AXGQExVosRs3A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[0.65rem] tracking-widest uppercase text-[#6B4C30] hover:text-[#9B6F1A] transition-colors font-semibold"
+                >
+                  Google Maps'te Aç ↗
+                </a>
+              </div>
+              <iframe
+                title="Aydıngüler Yapı Konum"
+                src="https://maps.google.com/maps?q=37.0814026,37.3337363&z=17&hl=tr&output=embed"
+                width="100%"
+                height="380"
+                style={{ border: 0, display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </RevealSection>
         </div>
       </section>
     </>
