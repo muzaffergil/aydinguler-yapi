@@ -1,25 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  /* Pearl cream backgrounds — layered depth */
-  --bg:   #F2EAD8;   /* main: warm ivory pearl */
-  --bg2:  #EAE0CA;   /* sections: slightly deeper */
-  --bg3:  #E2D6BA;   /* deepest cream */
-  --card: #FAF6EE;   /* card surfaces: lightest */
+  /* Kurumsal arka planlar — soğuk gri-beyaz */
+  --bg:   #F5F6F9;   /* ana: soğuk açık gri */
+  --bg2:  #ECEEF4;   /* bölüm: orta gri */
+  --bg3:  #E2E5EE;   /* derin: koyu gri */
+  --card: #FFFFFF;   /* kartlar: saf beyaz */
 
-  /* Amber gold accent — darker for light-bg contrast */
-  --gold:       #9B6F1A;
-  --gold-light: #C9A84C;
-  --gold-dim:   rgba(155, 111, 26, 0.10);
+  /* Lacivert — birincil kurumsal renk */
+  --navy:       #162040;
+  --navy-light: #1E2D5A;
+  --navy-dim:   rgba(22, 32, 64, 0.06);
 
-  /* Coffee / espresso text tones */
-  --text:       #1C0F00;   /* espresso — near black warm */
-  --text-muted: #6B4C30;   /* roasted coffee brown */
-  --text-light: #9E7D60;   /* latte taupe */
+  /* Altın aksan — ikincil */
+  --gold:       #C9A84C;
+  --gold-dark:  #A07828;
+  --gold-dim:   rgba(201, 168, 76, 0.15);
 
-  /* Borders */
-  --border: rgba(107, 76, 48, 0.16);
-  --border-strong: rgba(107, 76, 48, 0.32);
+  /* Yazı tonları — lacivert bazlı */
+  --text:       #0D1421;   /* neredeyse siyah lacivert */
+  --text-body:  #2E3C5E;   /* orta lacivert-gri */
+  --text-muted: #6B7A9E;   /* açık gri-mavi */
+
+  /* Kenarlıklar */
+  --border:       rgba(22, 32, 64, 0.12);
+  --border-strong: rgba(22, 32, 64, 0.25);
 }
 
 * { box-sizing: border-box; }
@@ -30,17 +35,6 @@ body {
   color: var(--text);
   font-family: var(--font-dm), sans-serif;
   -webkit-font-smoothing: antialiased;
-}
-
-/* Subtle grain overlay for depth */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23grain)'/%3E%3C/svg%3E");
 }
 
 .font-display { font-family: var(--font-playfair), serif; }
@@ -57,16 +51,17 @@ body::after {
   font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   font-weight: 600;
 }
 
-.btn-gold {
+/* Birincil buton: lacivert */
+.btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--gold);
-  color: #FAF6EE;
+  background: var(--navy);
+  color: #FFFFFF;
   font-weight: 700;
   font-size: 0.78rem;
   letter-spacing: 0.09em;
@@ -74,22 +69,43 @@ body::after {
   padding: 0.875rem 2rem;
   transition: background 0.2s, transform 0.15s;
 }
-.btn-gold:hover { background: #7A520F; transform: translateY(-1px); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+/* İkincil buton: altın outline */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--navy);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.875rem 2rem;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-gold:hover { background: var(--navy-light); transform: translateY(-1px); }
 
 .btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid var(--border-strong);
-  color: var(--text-muted);
+  border: 1.5px solid var(--border-strong);
+  color: var(--text-body);
   font-weight: 600;
   font-size: 0.78rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   padding: 0.875rem 2rem;
-  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s;
 }
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+.btn-outline:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+  background: var(--navy-dim);
+  transform: translateY(-1px);
+}
 
 .hover-card { transition: box-shadow 0.25s, transform 0.25s; }
-.hover-card:hover { box-shadow: 0 8px 32px rgba(107,76,48,0.12); transform: translateY(-2px); }
+.hover-card:hover { box-shadow: 0 8px 32px rgba(22,32,64,0.1); transform: translateY(-2px); }

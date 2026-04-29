@@ -16,13 +16,11 @@ export default function ContactForm() {
 
   if (sent) {
     return (
-      <div className="h-full flex flex-col items-center justify-center text-center p-12 border border-[rgba(155,111,26,0.25)] bg-[#FAF6EE]">
-        <div className="w-12 h-12 border border-[#9B6F1A] flex items-center justify-center text-[#9B6F1A] text-2xl mb-6">✓</div>
-        <h3 className="font-display text-2xl font-bold text-[#1C0F00] mb-3">Mesajınız İletildi</h3>
-        <p className="text-[#6B4C30] text-sm leading-relaxed mb-6">
-          Ekibimiz en kısa sürede sizinle iletişime geçecektir.
-        </p>
-        <button onClick={() => setSent(false)} className="text-[#9B6F1A] text-xs tracking-widest uppercase hover:text-[#7A520F] transition-colors font-semibold">
+      <div className="h-full flex flex-col items-center justify-center text-center p-12 border border-[rgba(22,32,64,0.15)] bg-white">
+        <div className="w-12 h-12 bg-[#162040] flex items-center justify-center text-white text-xl mb-6">✓</div>
+        <h3 className="font-display text-2xl font-bold text-[#0D1421] mb-3">Mesajınız İletildi</h3>
+        <p className="text-[#2E3C5E] text-sm leading-relaxed mb-6">Ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
+        <button onClick={() => setSent(false)} className="text-[#162040] text-xs tracking-widest uppercase hover:text-[#C9A84C] transition-colors font-semibold">
           Yeni Mesaj Gönder
         </button>
       </div>
@@ -30,40 +28,24 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full bg-[#FAF6EE] border border-[rgba(107,76,48,0.2)] text-[#1C0F00] text-sm px-4 py-3 focus:outline-none focus:border-[rgba(155,111,26,0.6)] placeholder:text-[#C4AF9A] transition-colors";
+    "w-full bg-white border border-[rgba(22,32,64,0.15)] text-[#0D1421] text-sm px-4 py-3 focus:outline-none focus:border-[#162040] placeholder:text-[#A8B4CC] transition-colors";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label className="block text-[0.65rem] tracking-widest uppercase text-[#9E7D60] mb-2 font-semibold">Ad Soyad *</label>
-          <input
-            required
-            value={form.name}
-            onChange={(e) => set("name", e.target.value)}
-            placeholder="Adınız Soyadınız"
-            className={inputClass}
-          />
+          <label className="block text-[0.65rem] tracking-widest uppercase text-[#6B7A9E] mb-2 font-semibold">Ad Soyad *</label>
+          <input required value={form.name} onChange={(e) => set("name", e.target.value)} placeholder="Adınız Soyadınız" className={inputClass} />
         </div>
         <div>
-          <label className="block text-[0.65rem] tracking-widest uppercase text-[#9E7D60] mb-2 font-semibold">Telefon</label>
-          <input
-            type="tel"
-            value={form.phone}
-            onChange={(e) => set("phone", e.target.value)}
-            placeholder="05xx xxx xx xx"
-            className={inputClass}
-          />
+          <label className="block text-[0.65rem] tracking-widest uppercase text-[#6B7A9E] mb-2 font-semibold">Telefon</label>
+          <input type="tel" value={form.phone} onChange={(e) => set("phone", e.target.value)} placeholder="05xx xxx xx xx" className={inputClass} />
         </div>
       </div>
 
       <div>
-        <label className="block text-[0.65rem] tracking-widest uppercase text-[#9E7D60] mb-2 font-semibold">Konu</label>
-        <select
-          value={form.subject}
-          onChange={(e) => set("subject", e.target.value)}
-          className={inputClass}
-        >
+        <label className="block text-[0.65rem] tracking-widest uppercase text-[#6B7A9E] mb-2 font-semibold">Konu</label>
+        <select value={form.subject} onChange={(e) => set("subject", e.target.value)} className={inputClass}>
           <option value="">Konu Seçin</option>
           <option value="İnşaat">İnşaat</option>
           <option value="Mimari Tasarım">Mimari Tasarım</option>
@@ -74,15 +56,8 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-[0.65rem] tracking-widest uppercase text-[#9E7D60] mb-2 font-semibold">Mesajınız *</label>
-        <textarea
-          required
-          rows={5}
-          value={form.message}
-          onChange={(e) => set("message", e.target.value)}
-          placeholder="Projeniz veya sorunuz hakkında bilgi verin..."
-          className={`${inputClass} resize-none`}
-        />
+        <label className="block text-[0.65rem] tracking-widest uppercase text-[#6B7A9E] mb-2 font-semibold">Mesajınız *</label>
+        <textarea required rows={5} value={form.message} onChange={(e) => set("message", e.target.value)} placeholder="Projeniz veya sorunuz hakkında bilgi verin..." className={`${inputClass} resize-none`} />
       </div>
 
       <button type="submit" className="btn-gold w-full justify-center">
@@ -92,9 +67,9 @@ export default function ContactForm() {
         </svg>
       </button>
 
-      <p className="text-[#9E7D60] text-[0.65rem] text-center">
-        Formu göndermek e-posta uygulamanızı açar. Doğrudan aramak için:{" "}
-        <a href="tel:+903423601525" className="text-[#9B6F1A] hover:underline font-semibold">0342 360 15 25</a>
+      <p className="text-[#6B7A9E] text-[0.65rem] text-center">
+        Formu göndermek e-posta uygulamanızı açar. Doğrudan aramak:{" "}
+        <a href="tel:+903423601525" className="text-[#162040] hover:underline font-semibold">0342 360 15 25</a>
       </p>
     </form>
   );
