@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const LINKS = [
   { href: "#hero", label: "Ana Sayfa" },
@@ -63,13 +64,15 @@ export default function Navbar() {
 
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-18 py-4">
         {/* Logo */}
-        <button onClick={() => scrollTo("#hero")} className="flex flex-col leading-tight text-left">
-          <span className="font-display text-xl font-bold text-[#1C0F00] tracking-wide">
-            AYDINGÜLER
-          </span>
-          <span className="text-[0.6rem] tracking-[0.3em] text-[#9B6F1A] uppercase font-semibold">
-            Yapı & İnşaat
-          </span>
+        <button onClick={() => scrollTo("#hero")} className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Aydıngüler Yapı İnşaat"
+            width={160}
+            height={52}
+            style={{ mixBlendMode: "multiply" }}
+            priority
+          />
         </button>
 
         {/* Desktop nav */}

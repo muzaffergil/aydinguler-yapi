@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -12,12 +13,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <button onClick={() => scrollTo("hero")} className="mb-4 text-left">
-              <span className="font-display text-2xl font-bold text-[#1C0F00] tracking-wide block">
-                AYDINGÜLER
-              </span>
-              <span className="text-[0.6rem] tracking-[0.3em] text-[#9B6F1A] uppercase font-semibold">
-                Yapı & İnşaat
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Aydıngüler Yapı İnşaat"
+                width={180}
+                height={58}
+                style={{ mixBlendMode: "multiply" }}
+              />
             </button>
             <p className="text-[#6B4C30] text-sm leading-relaxed max-w-xs">
               Gaziantep'te 20 yılı aşkın deneyimimizle konut ve ticari yapı inşaatı, mimari tasarım ve gayrimenkul danışmanlığı hizmetleri sunuyoruz.
