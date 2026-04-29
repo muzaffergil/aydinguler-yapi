@@ -70,7 +70,7 @@ export default function Navbar() {
           <img
             src={`${BASE}/logo.png`}
             alt="Aydıngüler Yapı İnşaat"
-            className="h-16 w-auto"
+            className="h-[160px] w-auto"
             style={{ mixBlendMode: "multiply" }}
           />
         </button>
